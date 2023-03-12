@@ -73,13 +73,6 @@
 }
 
 /*============= BASE ==============*/
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
 
 body,
 button,
@@ -137,14 +130,6 @@ img {
 .section__title,
 .section__subtitle {
   text-align: center;
-}
-
-/*============ LAYOUT ===========*/
-.container {
-}
-
-.grid {
-
 }
 
 /*============ BUTTONS ===========*/

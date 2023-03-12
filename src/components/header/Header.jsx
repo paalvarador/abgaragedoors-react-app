@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import "./header.css";
+//import "./header.css";
 import companyLogo from "./../../assets/ab_logo.png";
 import Menu from './Menu';
-import Contact from './Contact';
+import ContactData from './ContactData';
 import Social from './Social';
 
 const Header = () => {
@@ -11,16 +11,15 @@ const Header = () => {
 
     return (
         <header className="header">
-
-            <nav className="company__information container">
-                <div className="info__left">
-                    <Contact />
-                </div>
-                <div className="info__right">
-                    <Social />
-                </div>
-            </nav>
             <nav className="nav container">
+                <div className="nav__info">
+                    <div className="info__left">
+                        <ContactData />
+                    </div>
+                    <div className="info__right">
+                        <Social />
+                    </div>
+                </div>
                 <div className="nav__logo">
                     <img src={companyLogo} alt="Logo AB Garage Doors" className="logo" />
                 </div>

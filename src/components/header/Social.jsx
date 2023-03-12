@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Social() {
+const Social = () => {
     const [socials, setSocials] = useState([]);
 
     useEffect(() => {
@@ -17,13 +17,11 @@ function Social() {
     }, []);
 
     return (
-        <div className="nav__social">
-            <ul className="header__social">
-                {socials.map((social) => (
-                    <li key={social._id} className="nav__social-item"><a href={social.link} className="nav__social-link"><i class={social.name}></i></a></li>
-                ))}
-            </ul>
-        </div>
+        <ul className="list__social">
+            {socials.map((social) => (
+                <li key={social._id} className="social__item"><a href={social.link} className="nav__social-link" target="_blank" rel="noreferrer"><i class={social.name}></i></a></li>
+            ))}
+        </ul>
     )
 }
 
