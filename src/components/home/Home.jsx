@@ -1,5 +1,6 @@
 import React from 'react';
-//import "./home.css";
+import "./home.css";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,8 +15,16 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Home = () => {
     return (
-        <section className="home section" id="home">
+        <section className="home_section" id="home">
                 <div className="home__content">
+                    <div className="home_card">
+                        <div className="home_card-title">
+                            <h1>We Are Security</h1>
+                        </div>
+                        <div className="home_card-description">
+                            <span>At AB Garage Doors we like offer security to our clients</span> 
+                        </div>
+                    </div>
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
@@ -31,10 +40,6 @@ const Home = () => {
                         className="mySwiper"
                     >
                         <SwiperSlide><img src={require('../../assets/sliders/slide1.jpg')} alt="slide1" /></SwiperSlide>
-                        <SwiperSlide><img src={require('../../assets/sliders/slide2.jpg')} alt="slide2" /></SwiperSlide>
-                        <SwiperSlide><img src={require('../../assets/sliders/slide3.jpg')} alt="slide3" /></SwiperSlide>
-                        <SwiperSlide><img src={require('../../assets/sliders/slide4.jpg')} alt="slide4" /></SwiperSlide>
-                        <SwiperSlide><img src={require('../../assets/sliders/slide5.jpg')} alt="slide5" /></SwiperSlide>
                         <SwiperSlide><img src={require('../../assets/sliders/slide6.jpg')} alt="slide6" /></SwiperSlide>
                         <SwiperSlide><img src={require('../../assets/sliders/slide7.jpg')} alt="slide7" /></SwiperSlide>
                         <SwiperSlide><img src={require('../../assets/sliders/slide8.jpg')} alt="slide8" /></SwiperSlide>

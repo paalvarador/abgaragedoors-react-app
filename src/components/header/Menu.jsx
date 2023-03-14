@@ -5,7 +5,7 @@ const Menu = (props) => {
     const [menus, setMenus] = useState([]);
 
 
-    console.log("Valor de Toogle = " + props.nombre);
+    console.log("Valor de Toogle = " + props.toggle);
 
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const Menu = (props) => {
     return (
     
         <div className={props.toggle ? "nav__menu show-menu" : "nav__menu"}>
-            <ul className="nav__list grid">
+            <ul className="nav__list">
                 {menus.map((menu) => (<li key={menu._id} className="nav__item"><a href={menu.link} className="nav__link">{menu.name}</a></li>))}
             </ul>
         </div>

@@ -1,0 +1,116 @@
+.contact_section {
+    background-color: var(--container-color);
+    display: block;
+    padding-bottom: 2rem;
+}
+
+.contact_section-title {
+    margin: 0;
+    text-align: center;
+    padding: 3rem 0 0 0;
+}
+
+.contact_section-subtitle {
+    display: block;
+    text-align: center;
+    font-size: var(--small-font-size);
+    font-weight: --var(--font-bold);
+    color: var(--toggle-color);
+}
+
+.contact_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.contact__content {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.contact__title {
+    font-size: var(--h6-font-size);
+    text-align: center;
+    font-weight: var(--font-medium);
+    padding-bottom: 1.5rem;
+}
+
+.contact__info {
+    display: block;
+}
+
+.contact__card {
+    background-color: var(--container-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.7rem;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact__card-icon {
+    font-size: 2.5rem;
+    color: var(--toggle-color);
+}
+
+.contact__card span {
+    display: block;
+    color: var(--black-color);
+}
+
+.contact__form {
+    width: 100%;
+}
+
+.contact__form-div {
+    height: 4rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.contact__form-area {
+    height: 11rem;
+}
+
+.contact__form-tag {
+    background-color: var(--body-color);
+    font-size: var(--smaller-font-size);
+    left: 1.25rem;
+    padding: 0.25rem;
+    position: absolute;
+    top: -0.75rem;
+    z-index: 10;
+}
+
+.contact__form-input {
+    background: none;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75rem;
+    color: var(--text-color);
+    height: 100%;
+    left: 0;
+    outline: none;
+    padding: 1.5rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.button {
+    padding: 1.25rem 2rem;
+    background-color: var(--toggle-color);
+    color: var(--container-color);
+    border-radius: 1rem;
+    font-weight: var(--font-medium);
+}
+
+.button:hover {
+    background-color: rgba(255, 193, 0, 0.5);
+}
+

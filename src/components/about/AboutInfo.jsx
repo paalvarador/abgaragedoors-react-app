@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
 function AboutInfo() {
     const [aboutInfo, setAboutInfo] = useState([]);
 
@@ -28,7 +29,7 @@ function AboutInfo() {
             <div className="about__information__right">
                 {
                     aboutInfo.map((about) => (
-                        <img key={about._id} src={about.image} className="about__image__description" alt="Imagen AB Garage Doors"/>
+                        <img key={about._id} src={about.image} className="about_image" alt="Imagen AB Garage Doors"/>
                     ))
                 }
             </div>
