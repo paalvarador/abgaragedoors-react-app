@@ -85,6 +85,7 @@
     position: absolute;
     top: -0.75rem;
     z-index: 10;
+    color: var(--black-color);
 }
 
 .contact__form-input {

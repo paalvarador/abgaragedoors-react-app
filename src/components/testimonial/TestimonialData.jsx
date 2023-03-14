@@ -16,7 +16,7 @@ function TestimonialData() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/api/testimonial/all")
+            .get("https://sample-api-abgarage.herokuapp.com/api/testimonial/all")
             .then(res => {
                 console.log(res);
                 setTestimonialData(res.data);

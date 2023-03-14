@@ -8,7 +8,7 @@ const WorkData = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/api/work/all")
+            .get("https://sample-api-abgarage.herokuapp.com/api/work/all")
             .then(res => {
                 console.log(res);
                 setWorkData(res.data);

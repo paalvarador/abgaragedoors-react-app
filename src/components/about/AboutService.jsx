@@ -6,7 +6,7 @@ function AboutService() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/api/service/all")
+            .get("https://sample-api-abgarage.herokuapp.com/api/service/all")
             .then(res => {
                 console.log(res);
                 setAboutService(res.data);

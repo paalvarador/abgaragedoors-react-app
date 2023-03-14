@@ -7,7 +7,7 @@ function AboutInfo() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/api/about/all")
+            .get("https://sample-api-abgarage.herokuapp.com/api/about/all")
             .then(res => {
                 console.log(res);
                 setAboutInfo(res.data);

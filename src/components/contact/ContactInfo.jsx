@@ -6,7 +6,7 @@ function ContactInfo() {
 
   useEffect((res, err) => {
     axios
-      .get("http://localhost:3000/api/contact/all")
+      .get("https://sample-api-abgarage.herokuapp.com/api/contact/all")
       .then(res => {
         console.log(res);
         setContatInfo(res.data);
