@@ -27,7 +27,7 @@
     margin: 0 2.5rem;
   }
 
-  .swiper-slide {
+  .work__section .work__container .swiper-slide {
     width: 100%;
     height: 500px;
   }
