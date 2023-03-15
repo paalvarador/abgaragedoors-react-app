@@ -58,9 +58,17 @@
     color: var(--toggle-color);
 }
 
-.contact__card span {
+.contact__card-data {
     display: block;
     color: var(--black-color);
+    padding: 0.5rem 0 0 0;
+}
+
+.contact__card-button {
+    display: block;
+    margin-top: 0.8rem;
+    cursor: pointer;
+    color: var(--text-color);
 }
 
 .contact__form {

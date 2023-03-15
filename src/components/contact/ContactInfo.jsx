@@ -27,6 +27,7 @@ function ContactInfo() {
                 <h3 className="contact__card-title">Email</h3>
                 <span className="contact__card-data">{contact.email[0]}</span>
                 <span className="contact__card-data">{contact.email[1]}</span>
+                <a href={"mailto:"+contact.email[0]} className="contact__card-button">Write email</a>
               </div>
             ))
           }
@@ -36,7 +37,7 @@ function ContactInfo() {
                 <i className="bx bxl-whatsapp contact__card-icon"></i>
                 <h3 className="contact__card-title">WhatsApp</h3>
                 <span className="contact__card-data">{contact.phone[0]}</span>
-                <span className="contact__card-data">{contact.phone[1]}</span>
+                <a href="https://wa.link/ct9k90" className="contact__card-button" target="_blank" rel="noreferrer">Write WhatsApp</a>
               </div>
             ))
           }

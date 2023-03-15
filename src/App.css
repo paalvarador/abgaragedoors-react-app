@@ -10,7 +10,7 @@
   --title-color: hsl(var(--hue), var(--sat), 20%);
   --title-color-white: #f3f3f3;
   --title-color-dark: hsl(var(--hue), var(--sat), 0%);
-  --text-color: hsl(var(--hue), var(--sat), 90%);
+  --text-color: hsl(var(--hue), var(--sat), 45%);
   --body-color: hsl(var(--hue), var(--sat), 100%);
   --container-color: #ffffff;
   --black-color: #1e2126;
@@ -81,7 +81,7 @@ html {
 }
 
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body,

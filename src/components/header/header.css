@@ -1,9 +1,23 @@
 /* Header Block */
+/* Main header with static position */
 .main_header_area {
     background-color: var(--body-color);
     display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1000;  
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
+
+  /* Main header without static position
+  .main_header_area {
+    background-color: var(--body-color);
+    display: block;
+    width: 100%;;
+  }
+  /* End header without static position */
   
   /* Header top area */
   .header_top_area {
@@ -59,6 +73,7 @@
     color: rgba(255, 255, 255, 0.8);
   }
   /* Fin header top area */
+
   .main_menu_area {
     display: flex;
     justify-content: space-between;
@@ -113,14 +128,22 @@
 
   
 /* For large devices */
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 900px) {
   .nav__logo {
     padding: 0.5rem 0 0.5rem;
   }
 
+  .main_menu_area .nav__logo .logo {
+    width: 70%;
+    height: auto;
+    max-width: 150px;
+    margin-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
   .nav__menu {
     position: fixed;
-    top: -100%;
+    top: -200%;
     left: 0;
     width: 100%;
     background-color: var(--body-color);
@@ -172,10 +195,24 @@
 }
 
 /* For medium devices */
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 740px) { 
   .header_top_area {
+    display: block;
+  } 
+  .pull-right {
     display: none;
   }
+  .pull-left .list__info {
+    display: flex;
+  }
+  .list__item {
+    padding: 0 0.2rem;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 554px){
+
 }
 
 /* For medium devices 
