@@ -1,43 +1,64 @@
 /* Work Section Styles */
 .work_section {
-    background-color: var(--body-color);
-    display: block;
-    padding-bottom: 2rem;
-    border-bottom: 4px solid green;
-  }
-  
-  .work_section .section__title {
-    margin: 0;
-    text-align: right;
-    padding: 3rem 3rem 0 0;
-  }
-  
-  .about_section-subtitle {
-    display: block;
-    font-size: var(--small-font-size);
-    font-weight: --var(--font-bold);
-    color: var(--toggle-color);
-    text-align: right;
-    padding: 0 3rem 3rem 0;
+  background-color: var(--body-color);
+  display: block;
+  padding-bottom: 2rem;
+  border-bottom: 4px solid green;
+}
 
-  }
+.work_section .section__title {
+  margin: 0;
+  text-align: right;
+  padding: 3rem 3rem 0 0;
+}
 
-  .work__content {
-    position: relative;
-    margin: 0 2.5rem;
-  }
+.about_section-subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  font-weight: --var(--font-bold);
+  color: var(--toggle-color);
+  text-align: right;
+  padding: 0 3rem 3rem 0;
 
-  .work__section .work__container .swiper-slide {
-    width: 100%;
-    height: 500px;
-  }
+}
 
-  .swiper-slide .work__content img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
+.work__content {
+  position: relative;
+  margin: 0 2.5rem;
+}
+
+.work__section .work__container .swiper-slide {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-slide .work__content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work__content__data {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.work__content__data h3 {
+  padding-left: 2rem;
+  color: var(--toggle-color);
+  font-size: 1.8rem;
+}
+
+.work__content__data p {
+  padding-left: 2rem;
+  color: var(--toggle-color);
+  font-size: 1.1rem;
+}
+
+/* For small devices */
+@media screen and (max-width: 554px) {
   .work__content__data {
     position: absolute;
     width: 100%;
@@ -47,12 +68,14 @@
 
   .work__content__data h3 {
     padding-left: 2rem;
-    color: var(--toggle-color);
-    font-size: 1.8rem;
+    color: var(--black-color);
+    font-weight: var(--font-bold);
+    font-size: 1rem;
   }
 
   .work__content__data p {
     padding-left: 2rem;
-    color: var(--toggle-color);
-    font-size: 1.1rem;
+    color: var(--black-color);
+    font-size: 0.9rem;
   }
+}

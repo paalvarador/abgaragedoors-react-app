@@ -44,7 +44,7 @@
   }
   
   .header_top_area .pull-left .list__info .list__item a{
-    color: var(--text-color)
+    color: var(--toggle-color);
   }
   
   .header_top_area .pull-left .list__info .list__item .contact__info__icon{
