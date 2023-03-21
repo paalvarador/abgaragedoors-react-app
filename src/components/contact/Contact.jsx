@@ -1,22 +1,39 @@
-import React, { useRef } from 'react';
-import ContactInfo from './ContactInfo';
+import React, { useState } from 'react'
+import ContactInfo from './ContactInfo'
 import "./contact.css"
-
-import emailjs from '@emailjs/browser';
-
+import axios from 'axios';
 
 const Contact = () => {
-    const form = useRef();
+    const [modalState, setModalState] = useState(0)
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+    const modalAction = (index) => {
+        if(index === 0) 
+            document.getElementById("name").value = ""
+            document.getElementById("email").value = ""
+            document.getElementById("message").value = ""
+        
+        setModalState(index)
+    }
 
-        emailjs.sendForm('service_prn2scn', 'template_33jj7u4', form.current, 'uV7Y5NspUBNWLptRv')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+    const sendEmail = () => {
+        console.log("Hice clic en el botón enviar mensaje")
+
+        const data = {
+            "name": document.getElementById("name").value,
+            "from": document.getElementById("email").value,
+            "to": "rodrigo@abgaragedoors.com",
+            "subject": "A new Message from " + document.getElementById("name").value,
+            "message": document.getElementById("message").value
+        }
+
+        axios
+            .post("https://sample-api-abgarage.herokuapp.com/api/email/send", data)
+            .then(res => {
+                console.log(res)
+                
+                res.status === 200 ? modalAction(1) : modalAction(0)
+            })
+            .catch(err => { console.error(err) })
     };
     return (
         <section className="contact_section" id="contact">
@@ -27,23 +44,34 @@ const Contact = () => {
                 <ContactInfo />
                 <div className="contact__content">
                     <h3 className="contact__title">Get A Quote Now</h3>
-                    <form className="contact__form" ref={form} onSubmit={sendEmail}>
+                    <form className="contact__form">
                         <div className="contact__form-div">
                             <label htmlFor="name" className="contact__form-tag">Name</label>
-                            <input type="text" className="contact__form-input" name="name" placeholder="Insert your name" />
+                            <input id="name" type="text" className="contact__form-input" name="name" placeholder="Insert your name" />
                         </div>
                         <div className="contact__form-div">
                             <label htmlFor="email" className="contact__form-tag">Email</label>
-                            <input type="email" className="contact__form-input" name="email" placeholder="Insert your email" />
+                            <input id="email" type="email" className="contact__form-input" name="email" placeholder="Insert your email" />
                         </div>
                         <div className="contact__form-div contact__form-area">
                             <label htmlFor="message" className="contact__form-tag">Message</label>
-                            <textarea className="contact__form-input" name="message" cols="30" rows="10" placeholder="Get A Quote? Send a message"></textarea>
+                            <textarea id="message" className="contact__form-input" name="message" cols="30" rows="10" placeholder="Get A Quote? Send a message"></textarea>
                         </div>
-                        <input type="submit" className="button button--flex" value="Send Message"/>
+                        <input type="button" onClick={sendEmail} className="button button--flex" value="Send Message" />
                     </form>
                 </div>
+                <div className={modalState === 1 ? "contact__modal active-modal" : "contact__modal"}>
+                    <div className="contact__modal-content">
+                        <h3 className="contact__modal-title">Message from AB Garage Doors</h3>
+                        <i className="uil uil-message contact__modal-icon"></i>
+                        <p className="contact__modal-message">Thank you for your message. We'll contact you soon</p>
+                        <div className="contact__modal-button" onClick={() => modalAction(0)}>
+                            <span>It's OK</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </section>
     )
 }
