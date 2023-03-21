@@ -16,8 +16,6 @@ const Contact = () => {
     }
 
     const sendEmail = () => {
-        console.log("Hice clic en el botón enviar mensaje")
-
         const data = {
             "name": document.getElementById("name").value,
             "from": document.getElementById("email").value,
