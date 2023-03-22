@@ -46,7 +46,7 @@ const WorkData = () => {
                     workData.map((work) => (
                         <SwiperSlide>
                             <div key={work._id} className="work__content">
-                                <img src={work.image} alt={work.name} />
+                                <img src={"https://www.abgaragedoors.com/"+work.image} alt={work.name} />
                                 <div className="work__content__data">
                                     <h3 className="work__content__data-title">{work.title}</h3>
                                     <p className="work__content_data-description">{work.description}</p>
