@@ -18,7 +18,7 @@ const Contact = () => {
     const sendEmail = () => {
         const data = {
             "name": document.getElementById("name").value,
-            "from": document.getElementById("from").value,
+            "from": document.getElementById("email").value,
             "to": "rodrigo@abgaragedoors.com",
             "message": document.getElementById("message").value
         }
