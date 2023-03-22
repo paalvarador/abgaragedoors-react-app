@@ -18,15 +18,15 @@ const Contact = () => {
     const sendEmail = () => {
         const data = {
             "name": document.getElementById("name").value,
-            "from": document.getElementById("email").value,
+            "from": document.getElementById("from").value,
             "to": "rodrigo@abgaragedoors.com",
-            "subject": "A new Message from " + document.getElementById("name").value,
             "message": document.getElementById("message").value
         }
 
         axios
             .post("https://sample-api-abgarage.herokuapp.com/api/email/send", data)
             .then(res => {
+                console.log("La respuesta del servidor de correos")
                 console.log(res)
                 
                 res.status === 200 ? modalAction(1) : modalAction(0)
