@@ -29,7 +29,7 @@ function AboutInfo() {
             <div className="about__information__right">
                 {
                     aboutInfo.map((about) => (
-                        <img key={about._id} src={about.image} className="about_image" alt="Imagen AB Garage Doors"/>
+                        <img key={about._id} src={window.location.origin + '/' + about.image} className="about_image" alt="Imagen AB Garage Doors"/>
                     ))
                 }
             </div>

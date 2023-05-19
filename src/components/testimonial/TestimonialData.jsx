@@ -36,7 +36,11 @@ function TestimonialData() {
                     clickable: true,
                 }}
                 breakpoints={{
-                    640: {
+                    996: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    639: {
                         slidesPerView: 1,
                         spaceBetween: 20,
                     },

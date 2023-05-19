@@ -1,68 +1,74 @@
 /* Testimonial Section Styles */
 .testimonial_section {
-    background-color: var(--container-color);
-    display: block;
-    padding-bottom: 2rem;
-    border-bottom: 4px solid green;
-  }
-  
-  .testimonial_section .section__title {
-    margin: 0;
-    text-align: left;
-    padding: 3rem 0 0 3rem;
-  }
-  
-  .testimonial__container {
-    background-color: rgba(0, 0, 0, 0.04);
-    margin: 1rem 3rem;
-    border-radius: 3rem 1rem 3rem 1rem;
-    color: var(--black-color);
-  }
+  background-color: var(--container-color);
+  display: block;
+  padding-bottom: 2rem;
+  border-bottom: 4px solid green;
+}
 
-  .testimonial__card {
-    display: block;
+.testimonial_section .section__title {
+  margin: 0;
+  text-align: left;
+  padding: 3rem 0 0 3rem;
+}
+
+.testimonial__container {
+  background-color: rgba(0, 0, 0, 0.04);
+  margin: 1rem 10rem;
+  border-radius: 3rem 1rem 3rem 1rem;
+  color: var(--black-color);
+}
+
+.testimonial__img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  width: 15%;
+}
+
+.testimonial__name {
+  display: block;
+  padding-left: 2rem;
+}
+
+.testimonial__message {
+  display: block;
+  text-align: justify;
+  padding: 0 2rem 0 2rem;
+}
+
+.testimonial__city {
+  display: block;
+  text-align: center;
+  padding: 0 2rem 1rem 2rem;
+}
+
+.testimonial__country {
+  display: block;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+/*************** BREAKPOINTS ************/
+/***** For Medium Devices *****/
+@media screen and (max-width: 996px) {
+  .testimonial__container {
+    margin: 1rem 5rem;
   }
 
   .testimonial__img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    width: 20%;
+    width: 15%;
   }
-
-  .testimonial__name {
-    display: block;
-    padding-left: 2rem;
-  }
-
-  .testimonial__message {
-    display: block;
-    text-align: justify;
-    padding: 0 2rem 0 2rem;
-  }
-
-  .testimonial__city {
-    display: block;
-    text-align: center;
-    padding: 0 2rem 1rem 2rem;
-  }
-
-  .testimonial__country {
-    display: block;
-    text-align: center;
-    padding-bottom: 2rem;
-  }
-
-  /*************** BREAKPOINTS ************/
-  /***** For Medium Devices *****/
-@media screen and (max-width: 996px) {
-
 }
 
 /***** For Small Devices *****/
-@media screen and (max-width: 554px) {
+@media screen and (max-width: 639px) {
+  .testimonial__container {
+    margin: 1rem 2rem;
+  }
+
   .testimonial__img {
-    width: 25%;
+    width: 20%;
   }
 }

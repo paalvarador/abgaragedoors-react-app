@@ -1,6 +1,6 @@
 import React from 'react'
-import WorkData from './WorkData'
-import "./work.css"
+import WorkData from './WorkData';
+import './work.css';
 
 const Work = () => {
   return (
