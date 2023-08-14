@@ -24,7 +24,7 @@ const Contact = () => {
         }
 
         axios
-            .post("https://sample-api-abgarage.herokuapp.com/api/email/send", data)
+            .post("https://abgaragedoors-api-rest.vercel.app/api/email/send", data)
             .then(res => {
                 console.log("La respuesta del servidor de correos")
                 console.log(res)
