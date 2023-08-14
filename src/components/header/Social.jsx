@@ -6,7 +6,7 @@ const Social = () => {
 
     useEffect(() => {
         axios
-            .get("https://sample-api-abgarage.herokuapp.com/api/social/all")
+            .get("https://abgaragedoors-api-rest.vercel.app/api/social/all")
             .then(res => {
                 console.log(res);
                 setSocials(res.data);
