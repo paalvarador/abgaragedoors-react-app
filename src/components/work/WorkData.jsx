@@ -14,7 +14,7 @@ const WorkData = () => {
 
     useEffect(() => {
         axios
-            .get("https://sample-api-abgarage.herokuapp.com/api/work/all")
+            .get("https://abgaragedoors-api-rest.vercel.app/api/work/all")
             .then(res => {
                 console.log(res);
                 setWorkData(res.data);
