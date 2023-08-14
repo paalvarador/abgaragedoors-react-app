@@ -7,7 +7,7 @@ function AboutInfo() {
 
     useEffect(() => {
         axios
-            .get("https://sample-api-abgarage.herokuapp.com/api/about/all")
+            .get("https://abgaragedoors-api-rest.vercel.app/api/about/all")
             .then(res => {
                 console.log(res);
                 setAboutInfo(res.data);
