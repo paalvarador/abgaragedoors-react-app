@@ -6,7 +6,7 @@ function ContactInfo() {
 
   useEffect((res, err) => {
     axios
-      .get("https://sample-api-abgarage.herokuapp.com/api/contact/all")
+      .get("https://abgaragedoors-api-rest.vercel.app/api/contact/all")
       .then(res => {
         console.log(res);
         setContatInfo(res.data);
