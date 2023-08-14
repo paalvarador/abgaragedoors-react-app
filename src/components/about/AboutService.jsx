@@ -6,7 +6,7 @@ function AboutService() {
 
     useEffect(() => {
         axios
-            .get("https://sample-api-abgarage.herokuapp.com/api/service/all")
+            .get("https://abgaragedoors-api-rest.vercel.app/api/service/all")
             .then(res => {
                 console.log(res);
                 setAboutService(res.data);
