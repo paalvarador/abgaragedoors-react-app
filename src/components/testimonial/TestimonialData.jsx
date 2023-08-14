@@ -16,7 +16,7 @@ function TestimonialData() {
 
     useEffect(() => {
         axios
-            .get("https://sample-api-abgarage.herokuapp.com/api/testimonial/all")
+            .get("https://abgaragedoors-api-rest.vercel.app/api/testimonial/all")
             .then(res => {
                 console.log(res);
                 setTestimonialData(res.data);
