@@ -121,6 +121,7 @@
 
 .button:hover {
     background-color: rgba(255, 193, 0, 0.5);
+    cursor: pointer;
 }
 
 /* Work modal CSS Styles */
