@@ -1,0 +1,15 @@
+.dealer_section {
+  display: block;
+  background-color: var(--container-color);
+  padding: 1rem 2rem;
+}
+
+.dealer__container {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
