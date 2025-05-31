@@ -24,7 +24,7 @@
     background-color: #1e2126;
     display: grid;
     grid-template-columns: 1.5fr 0.5fr;
-    height: auto;
+    height: 30px;
   }
   
   /* Pull left (Company Info Contact) */
@@ -38,7 +38,7 @@
   .header_top_area .pull-left .list__info .list__item {
     border-left: 1px solid rgba(255, 193, 0, 0.4);
     text-align: center;
-    line-height: 40px;
+    line-height: 30px;
     top: 0;
     bottom: 0;
   }
@@ -64,7 +64,7 @@
   
   .header_top_area .pull-right .list__social .social__item{
     text-align: center;
-    line-height: 40px;
+    line-height: 30px;
   }
   
   .header_top_area .pull-right .list__social .social__item a{
@@ -79,12 +79,13 @@
     justify-content: space-between;
     background-color: var(--body-color);
     align-items: center;
+    height: 70px;
   }
   
   .main_menu_area .nav__logo .logo {
     width: 100%;
-    height: auto;
-    max-width: 150px;
+    height: 100%;
+    max-width: 100px;
     margin-left: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
