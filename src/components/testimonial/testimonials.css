@@ -49,7 +49,7 @@
   display: block;
   text-align: justify;
   color: var(--black-color);
-  padding: 0 20rem 0 20rem;
+  padding: 0 15rem;
 }
 
 .testimonial__city {
@@ -69,7 +69,11 @@
 /***** For Medium Devices *****/
 @media screen and (max-width: 996px) {
   .testimonial__container {
-    margin: 1rem 5rem;
+    margin: 1rem 1rem;
+  }
+
+  .testimonial__message {
+    padding: 0 5rem;
   }
 
   .testimonial__img {
