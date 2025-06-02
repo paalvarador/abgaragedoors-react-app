@@ -13,3 +13,12 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/********* BREAKPOINTS ***********/
+/***** For Small Devices ******/
+@media screen and (max-width: 639px){
+  .dealer__container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
