@@ -16,7 +16,7 @@ const Testimonial = () => {
 
       <div className="review-button">
         <input
-          type="hidden"
+          type="button"
           onClick={() => setModalOpen(true)}
           value="Leave a Review"
           style={{ width: "180px", borderRadius: "10px" }}

@@ -40,3 +40,9 @@
 .review-button {
   text-align: center;
 }
+
+.error {
+  font-size: 11px;
+  color: red;
+  border: 1px solid red;
+}
