@@ -21,7 +21,7 @@ function ContactMessage() {
     };
 
     axios
-      .post("https://abgaragedoors-api-rest.vercel.app/api/email/send", data)
+      .post("http://localhost:3000/api/email/send", data)
       .then((res) => {
         console.log("La respuesta del servidor de correos");
         console.log(res);

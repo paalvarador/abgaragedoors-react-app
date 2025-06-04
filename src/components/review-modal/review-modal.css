@@ -1,0 +1,42 @@
+.reviewModal__content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.reviewModal__modal {
+  background-color: #fff;
+  padding: 20px;
+  margin-left: 28rem;
+  margin-right: 28rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  text-align: center;
+}
+
+#fullname,
+#email-review,
+#review {
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+}
+
+.review-button {
+  text-align: center;
+}
