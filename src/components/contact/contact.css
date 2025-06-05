@@ -139,6 +139,13 @@ input[type=button] {
     align-items: center;
 }
 
+.contact__card-address {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+}
+
 .contact__card-contacts-hr {
     margin-bottom: 1.2rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);

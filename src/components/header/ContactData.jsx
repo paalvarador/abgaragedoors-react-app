@@ -20,7 +20,7 @@ function ContactData() {
     return (
         <ul className="list__info">
             {contacts.map((contact) => (<li className="list__item"><a key={contact._id} href="#home" className='contact__info__item1'><i class="uil uil-calling contact__info__icon"></i>{contact.phone[0]}</a></li>))}
-            {contacts.map((contact) => (<li className="list__item"><a key={contact._id} href="#home" className='contact__info__item3'><i class="uil uil-location-pin-alt contact__info__icon"></i>{contact.address}</a></li>))}
+            {contacts.map((contact) => (<li className="list__item"><a key={contact._id} href="#home" className='contact__info__item3'><i class="uil uil-location-pin-alt contact__info__icon"></i>{contact.city}</a></li>))}
         </ul>
     )
 }

@@ -20,6 +20,10 @@ function ContactInfo() {
       <div className="contact__content">
         {contactInfo.map((contact) => (
           <div key={contact._id} className="contact__card">
+            <div className="contact__card-address">
+              <i class="uil uil-location-pin-alt contact__card-icon"></i>
+              <span className="contact__card-data">{contact.address}</span>
+            </div>
             <div className="contact__card-contacts">
               <i className="bx bx-phone contact__card-icon"></i>
               <span className="contact__card-data">{contact.phone[0]}</span>
