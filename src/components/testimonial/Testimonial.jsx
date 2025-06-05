@@ -22,7 +22,6 @@ const Testimonial = () => {
           style={{ width: "180px", borderRadius: "10px" }}
         />
       </div>
-      <ReviewModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };
