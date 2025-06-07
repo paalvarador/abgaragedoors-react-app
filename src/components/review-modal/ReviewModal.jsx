@@ -2,17 +2,57 @@ import { useState } from "react";
 import PhotoUploader from "../photo-uploader/PhotoUploader";
 import "./review-modal.css";
 import validateReview from "../../validators/validateReview";
+import axios from "axios";
+import StarRating from "../star-rating/StarRating";
 
 const ReviewModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
-    fullname: "",
-    emailReview: "",
+    image: "",
+    name: "",
+    rating: 0,
+    email: "",
     country: "United States",
     city: "",
-    review: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
+
+  const handleImageUpload = async (file) => {
+    console.log(`Archivo recibido: ${file}`);
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append(
+      "upload_preset",
+      process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
+    );
+
+    console.log(`Cloud Name: ${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}`);
+
+    try {
+      const response = await fetch(
+        `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const data = await response.json();
+      console.log(`Cloudinary response: ${JSON.stringify(data)}`);
+
+      if (response.ok) {
+        setFormData((prevData) => ({
+          ...prevData,
+          image: data.secure_url,
+        }));
+      } else {
+        console.error(`Cloudinary upload failed: ${JSON.stringify(data)}`);
+      }
+    } catch (error) {
+      console.log("Error uploading image", error);
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -24,16 +64,58 @@ const ReviewModal = ({ isOpen, onClose }) => {
   const handleSubmit = () => {
     const validationErrors = validateReview(formData);
 
-    console.log(`validationErrors: ${validationErrors}`);
-
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
     console.log("Review submitted", formData);
+    sendReview(formData);
     setErrors({});
     onClose();
+  };
+
+  const sendReview = (data) => {
+    const { image, name, rating, email, city, country, message } = data;
+    console.log(`sendReview---------------`);
+    console.log(`image: ${image}`);
+    console.log(`name: ${name}`);
+    console.log(`rating: ${rating}`);
+    console.log(`email: ${email}`);
+    console.log(`city: ${city}`);
+    console.log(`country: ${country}`);
+    console.log(`message: ${message}`);
+
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("name", name);
+    formData.append("rating", rating);
+    formData.append("email", email);
+    formData.append("message", message);
+    formData.append("city", city);
+    formData.append("country", country);
+    formData.append("state", false);
+
+    console.log(`formData`);
+    console.log(`formData: ${JSON.stringify(formData)}`);
+
+    axios
+      .post("http://localhost:3000/api/testimonial", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        console.log(
+          `Este es el mensaje que se muestra: ${JSON.stringify(res)}`
+        );
+        res.status === 200
+          ? console.log("review created")
+          : console.log("review not created");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   if (!isOpen) return null;
@@ -48,31 +130,37 @@ const ReviewModal = ({ isOpen, onClose }) => {
     <div className="reviewModal__content" onClick={handleBackdropClick}>
       <div className="reviewModal__modal">
         <h3 className="title">LEAVE A REVIEW</h3>
-        <PhotoUploader />
+        <PhotoUploader onImageUpload={handleImageUpload} errors={errors} />
+        <StarRating
+          rating={formData.rating}
+          onRatingChange={(rating) =>
+            setFormData((prev) => ({ ...prev, rating }))
+          }
+          errors={errors}
+        />
         <input
           type="text"
-          id="fullname"
-          name="fullname"
+          id="name"
+          name="name"
           placeholder="Name"
           onChange={handleChange}
+          style={errors.name && { borderColor: "red" }}
         />
-        {errors.fullname && <span className="error">{errors.fullname}</span>}
         <input
           type="email"
-          id="email-review"
-          name="emailReview"
+          id="email"
+          name="email"
           placeholder="Email"
           onChange={handleChange}
+          style={errors.email && { borderColor: "red" }}
         />
-        {errors.emailReview && (
-          <span className="error">{errors.emailReview}</span>
-        )}
         <div className="location">
           <input
             type="text"
             id="country"
             name="country"
             value="United States"
+            style={errors.country && { borderColor: "red" }}
             disabled
           />
           <input
@@ -80,20 +168,19 @@ const ReviewModal = ({ isOpen, onClose }) => {
             id="city"
             name="city"
             placeholder="New Jersey"
+            style={errors.city && { borderColor: "red" }}
             onChange={handleChange}
           />
         </div>
-        {errors.country && <span className="error">{errors.country}</span>}
-        {errors.city && <span className="error">{errors.city}</span>}
         <textarea
-          id="review"
-          name="review"
+          id="message"
+          name="message"
           cols={40}
           rows={5}
-          placeholder="Review"
+          placeholder="Type your review"
+          style={errors.message && { borderColor: "red" }}
           onChange={handleChange}
         />
-        {errors.review && <span className="error">{errors.review}</span>}
         <div className="review-button">
           <input
             type="button"

@@ -1,18 +1,35 @@
-const validateReview = ({ fullname, emailReview, country, city, review }) => {
-  console.log(`name: ${fullname}`);
-  console.log(`email: ${emailReview}`);
+const validateReview = ({
+  image,
+  name,
+  rating,
+  email,
+  country,
+  city,
+  message,
+}) => {
+  console.log(`file: ${image}`);
+  console.log(`name: ${name}`);
+  console.log(`email: ${email}`);
   console.log(`country: ${country}`);
   console.log(`city: ${city}`);
-  console.log(`review: ${review}`);
+  console.log(`review: ${message}`);
 
   const errors = {};
 
-  if (!fullname || fullname.trim().length < 2) {
-    errors.fullname = "Name is required and must be at least 2 characters.";
+  if (!image) {
+    errors.image = "File image is required";
   }
 
-  if (!emailReview || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailReview)) {
-    errors.emailReview = "A valid email is required.";
+  if (!name || name.trim().length < 2) {
+    errors.name = "Name is required and must be at least 2 characters.";
+  }
+
+  if (!rating || rating < 1) {
+    errors.rating = "Please select a star rating";
+  }
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errors.email = "A valid email is required.";
   }
 
   if (!country) {
@@ -23,8 +40,8 @@ const validateReview = ({ fullname, emailReview, country, city, review }) => {
     errors.city = "City is required and must be at least 2 characters.";
   }
 
-  if (!review || review.trim().length < 10) {
-    errors.review = "Review must be at least 10 characters.";
+  if (!message || message.trim().length < 10) {
+    errors.message = "Review must be at least 10 characters.";
   }
 
   return errors;

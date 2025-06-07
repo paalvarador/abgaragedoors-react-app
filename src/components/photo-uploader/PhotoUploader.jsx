@@ -1,21 +1,24 @@
 import { useState } from "react";
 import "./PhotoUploader.css";
 
-const PhotoUploader = () => {
-  const [image, setImage] = useState(null);
+const PhotoUploader = ({ onImageUpload, errors }) => {
   const [previewUrl, setPreviewUrl] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file && file.type.startsWith("image/")) {
-      setImage(file);
       setPreviewUrl(URL.createObjectURL(file));
+      onImageUpload(file);
     }
   };
 
   return (
     <div className="upload-box-wrapper">
-      <label htmlFor="photo-upload" className="upload-box">
+      <label
+        htmlFor="photo-upload"
+        className="upload-box"
+        style={errors.image && { borderColor: "red" }}
+      >
         {previewUrl ? (
           <img src={previewUrl} alt="Preview" className="preview-image" />
         ) : (
@@ -34,7 +37,10 @@ const PhotoUploader = () => {
         id="photo-upload"
         accept="image/*"
         onChange={handleImageChange}
-        style={{ display: "none" }}
+        style={{
+          display: "none",
+          ...(errors.file && { borderColor: "red", display: "none" }),
+        }}
       />
     </div>
   );

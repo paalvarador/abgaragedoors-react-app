@@ -24,12 +24,15 @@
   text-align: center;
 }
 
-#fullname,
-#email-review,
-#review {
+#name,
+#email,
+#country,
+#city,
+#message {
   border: 1px solid #ccc;
   margin-bottom: 5px;
   border-radius: 5px;
+  padding: 5px;
 }
 
 .location {
