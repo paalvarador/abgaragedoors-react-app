@@ -13,6 +13,16 @@ const Testimonial = () => {
         Real Feedback. Real Trust.
       </span>
       <TestimonialData />
+
+      <div className="review-button">
+        <input
+          type="button"
+          onClick={() => setModalOpen(true)}
+          value="Leave a Review"
+          style={{ width: "180px", borderRadius: "10px" }}
+        />
+      </div>
+      <ReviewModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };

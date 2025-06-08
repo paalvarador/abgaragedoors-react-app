@@ -54,7 +54,11 @@ const ReviewModal = ({ isOpen, onClose }) => {
     }
   };
 
+  const [message, setMessage] = useState("");
+
   const handleChange = (e) => {
+    setMessage(e.target.value);
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -178,9 +182,12 @@ const ReviewModal = ({ isOpen, onClose }) => {
           cols={40}
           rows={5}
           placeholder="Type your review"
+          maxLength={400}
+          value={message}
           style={errors.message && { borderColor: "red" }}
           onChange={handleChange}
         />
+        <span>{message.length}/400</span>
         <div className="review-button">
           <input
             type="button"
