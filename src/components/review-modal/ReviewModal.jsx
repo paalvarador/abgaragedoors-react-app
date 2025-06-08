@@ -54,15 +54,12 @@ const ReviewModal = ({ isOpen, onClose }) => {
     }
   };
 
-  const [message, setMessage] = useState("");
-
   const handleChange = (e) => {
-    setMessage(e.target.value);
-
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = () => {
@@ -182,12 +179,12 @@ const ReviewModal = ({ isOpen, onClose }) => {
           cols={40}
           rows={5}
           placeholder="Type your review"
+          value={formData.message}
           maxLength={400}
-          value={message}
           style={errors.message && { borderColor: "red" }}
           onChange={handleChange}
         />
-        <span>{message.length}/400</span>
+        <span>{formData.message.length}/400</span>
         <div className="review-button">
           <input
             type="button"
