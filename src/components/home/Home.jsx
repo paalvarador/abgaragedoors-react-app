@@ -1,4 +1,3 @@
-import React from 'react';
 import "./home.css";
 
 // Import Swiper React components
@@ -6,11 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 
 
 const Home = () => {
@@ -18,11 +17,14 @@ const Home = () => {
         <section className="home_section" id="home">
                 <div className="home__content">
                     <div className="home_card">
-                        <div className="home_card-title">
-                            <h1>We Are Security</h1>
+                        <div>
+                            <span className="home_card-title">Your Security</span>
                         </div>
-                        <div className="home_card-description">
-                            <span>At AB Garage Doors we like offer security to our clients</span> 
+                        <div>
+                            <span className="home_card-subtitle">Our Mission.</span>
+                        </div>
+                        <div>
+                            <span className="home_card-description">At AB Garage Doors, we provide security high-quality garage door services to protect your home or business-with professional care you can count on.</span> 
                         </div>
                     </div>
                     <Swiper

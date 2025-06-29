@@ -3,6 +3,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+  filter: brightness(50%);
 }
 
 .home_section {
@@ -11,20 +12,39 @@
 
 .home_card {
   position: absolute;
-  top: 0;
+  top: 0%;
   left: 10%;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.3);
   padding-left: 1rem;
-  width: 350px;
+  padding-top: 15rem;
+  width: 550px;
   height: 100%;
   border-radius: 0.5rem;
 }
 
-.home_card span {
-  color: var(--black-color);
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-medium);
+.home_card-title,
+.home_card-subtitle,
+.home_card-description {
+  display: block;
+}
+
+.home_card-title {
+  color: var(--toggle-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+}
+
+.home_card-subtitle {
+  color: var(--container-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 1.5rem;
+}
+
+.home_card-description {
+  color: var(--container-color);
+  font-size: calc(var(--h3-font-size) - 0.4rem);
+  font-weight: var(--font-normal);
 }
 
 /* Fin Home Styles */
@@ -36,16 +56,23 @@
     top: 0;
     left: 10%;
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.3);
     padding-left: 1rem;
+    padding-top: 3rem;
     width: 250px;
     height: 100%;
     border-radius: 0.5rem;
   }
 
-  .home_card span {
-    color: var(--black-color);
-    font-size: calc(var(--h3-font-size) - 0.7rem);
+  .home_card-title {
+    font-size: calc(var(--h1-font-size) - 0.9rem);
+  }
+
+  .home_card-subtitle {
+    font-size: calc(var(--h1-font-size) - 0.9rem);
+  }
+
+  .home_card-description {
+    font-size: calc(var(--h3-font-size) - 0.9rem);
   }
 }
 
@@ -56,15 +83,22 @@
     top: 0;
     left: 10%;
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 1rem;
+    padding-top: 0.5rem;
     width: 190px;
     height: 100%;
     border-radius: 0.5rem;
   }
 
-  .home_card span {
-    color: var(--black-color);
-    font-size: calc(var(--h3-font-size) - 1.1rem);
+
+  .home_card-title {
+    font-size: calc(var(--h1-font-size) - 1.4rem);
+  }
+
+  .home_card-subtitle {
+    font-size: calc(var(--h1-font-size) - 1.4rem);
+  }
+
+  .home_card-description {
+    font-size: calc(var(--h3-font-size) - 1.3rem);
   }
 }
