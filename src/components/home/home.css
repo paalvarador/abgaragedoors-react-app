@@ -47,6 +47,18 @@
   font-weight: var(--font-normal);
 }
 
+.home_independence {
+  position: relative;
+  border: 2px solid red;
+}
+.home_independence .text {
+  font-size: 40px;
+}
+
+.home_independence .flag {
+  font-size: 30px;
+}
+
 /* Fin Home Styles */
 
 /*************** BREAKPOINTS ************/
@@ -102,3 +114,5 @@
     font-size: calc(var(--h3-font-size) - 1.3rem);
   }
 }
+
+

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 function ContactInfo() {
   const [contactInfo, setContatInfo] = useState([]);
@@ -8,7 +8,6 @@ function ContactInfo() {
     axios
       .get("https://abgaragedoors-api-rest.vercel.app/api/contact/all")
       .then((res) => {
-        console.log(res);
         setContatInfo(res.data);
       })
       .catch((err) => {

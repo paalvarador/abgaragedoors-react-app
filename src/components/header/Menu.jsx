@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Menu = (props) => {
     const [menus, setMenus] = useState([]);
-
-
-    console.log("Valor de Toogle = " + props.toggle);
-
 
     useEffect(() => {
         axios
             .get("http://localhost:3000/api/menus")
             .then(res => {
-                console.log(res);
                 setMenus(res.data);
             })
             .catch(err => {

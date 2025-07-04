@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 function AboutService() {
     const [aboutService, setAboutService] = useState([]);
@@ -8,7 +8,6 @@ function AboutService() {
         axios
             .get("https://abgaragedoors-api-rest.vercel.app/api/service/all")
             .then(res => {
-                console.log(res);
                 setAboutService(res.data);
             })
             .catch(err => {

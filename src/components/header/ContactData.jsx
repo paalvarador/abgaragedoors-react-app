@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 function ContactData() {
 
@@ -9,7 +9,6 @@ function ContactData() {
         axios
             .get("https://abgaragedoors-api-rest.vercel.app/api/contact/all")
             .then(res => {
-                console.log(res);
                 setContacts(res.data);
             })
             .catch(err => {

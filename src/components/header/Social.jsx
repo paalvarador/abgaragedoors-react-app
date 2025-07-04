@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Social = () => {
     const [socials, setSocials] = useState([]);
@@ -8,7 +8,6 @@ const Social = () => {
         axios
             .get("https://abgaragedoors-api-rest.vercel.app/api/social/all")
             .then(res => {
-                console.log(res);
                 setSocials(res.data);
             })
             .catch(err => {

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 
 function ContactMessage() {
   const [modalState, setModalState] = useState(0);
@@ -23,8 +23,6 @@ function ContactMessage() {
     axios
       .post("http://localhost:3000/api/email/send", data)
       .then((res) => {
-        console.log("La respuesta del servidor de correos");
-        console.log(res);
 
         res.status === 200 ? modalAction(1) : modalAction(0);
       })
