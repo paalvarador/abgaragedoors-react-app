@@ -7,12 +7,6 @@ const validateReview = ({
   city,
   message,
 }) => {
-  console.log(`file: ${image}`);
-  console.log(`name: ${name}`);
-  console.log(`email: ${email}`);
-  console.log(`country: ${country}`);
-  console.log(`city: ${city}`);
-  console.log(`review: ${message}`);
 
   const errors = {};
 

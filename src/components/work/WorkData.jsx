@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import { ImgComparisonSlider } from '@img-comparison-slider/react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -16,7 +16,6 @@ const WorkData = () => {
         axios
             .get("https://abgaragedoors-api-rest.vercel.app/api/work/all")
             .then(res => {
-                console.log(res);
                 setWorkData(res.data);
             })
             .catch(err => {

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,7 +18,6 @@ function TestimonialData() {
         axios
             .get("https://abgaragedoors-api-rest.vercel.app/api/testimonial/all")
             .then(res => {
-                console.log(res);
                 setTestimonialData(res.data);
             })
             .catch(err => {

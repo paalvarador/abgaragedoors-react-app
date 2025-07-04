@@ -1,9 +1,9 @@
-import { useState } from "react";
-import PhotoUploader from "../photo-uploader/PhotoUploader";
-import "./review-modal.css";
-import validateReview from "../../validators/validateReview";
 import axios from "axios";
+import { useState } from "react";
+import validateReview from "../../validators/validateReview";
+import PhotoUploader from "../photo-uploader/PhotoUploader";
 import StarRating from "../star-rating/StarRating";
+import "./review-modal.css";
 
 const ReviewModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -19,15 +19,12 @@ const ReviewModal = ({ isOpen, onClose }) => {
   const [errors, setErrors] = useState({});
 
   const handleImageUpload = async (file) => {
-    console.log(`Archivo recibido: ${file}`);
     const formData = new FormData();
     formData.append("file", file);
     formData.append(
       "upload_preset",
       process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
     );
-
-    console.log(`Cloud Name: ${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}`);
 
     try {
       const response = await fetch(
@@ -39,7 +36,6 @@ const ReviewModal = ({ isOpen, onClose }) => {
       );
 
       const data = await response.json();
-      console.log(`Cloudinary response: ${JSON.stringify(data)}`);
 
       if (response.ok) {
         setFormData((prevData) => ({
@@ -70,7 +66,6 @@ const ReviewModal = ({ isOpen, onClose }) => {
       return;
     }
 
-    console.log("Review submitted", formData);
     sendReview(formData);
     setErrors({});
     onClose();
@@ -78,14 +73,6 @@ const ReviewModal = ({ isOpen, onClose }) => {
 
   const sendReview = (data) => {
     const { image, name, rating, email, city, country, message } = data;
-    console.log(`sendReview---------------`);
-    console.log(`image: ${image}`);
-    console.log(`name: ${name}`);
-    console.log(`rating: ${rating}`);
-    console.log(`email: ${email}`);
-    console.log(`city: ${city}`);
-    console.log(`country: ${country}`);
-    console.log(`message: ${message}`);
 
     const formData = new FormData();
     formData.append("image", image);
@@ -96,9 +83,6 @@ const ReviewModal = ({ isOpen, onClose }) => {
     formData.append("city", city);
     formData.append("country", country);
     formData.append("state", false);
-
-    console.log(`formData`);
-    console.log(`formData: ${JSON.stringify(formData)}`);
 
     axios
       .post("http://localhost:3000/api/testimonial", formData, {

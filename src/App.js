@@ -1,13 +1,14 @@
+
+import "./App.css";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
+import Dealer from "./components/dealer/Dealer";
+import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
-import About from "./components/about/About";
-import Work from "./components/work/Work";
-import Testimonial from "./components/testimonial/Testimonial";
-import Contact from "./components/contact/Contact";
-import Footer from "./components/footer/Footer";
 import Modal from "./components/modal/Modal";
-import "./App.css";
-import Dealer from "./components/dealer/Dealer";
+import Testimonial from "./components/testimonial/Testimonial";
+import Work from "./components/work/Work";
 
 function App() {
   return (

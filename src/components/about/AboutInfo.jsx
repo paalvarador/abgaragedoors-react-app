@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 function AboutInfo() {
   const [aboutInfo, setAboutInfo] = useState([]);
@@ -8,7 +8,6 @@ function AboutInfo() {
     axios
       .get("https://abgaragedoors-api-rest.vercel.app/api/about/all")
       .then((res) => {
-        console.log(res);
         setAboutInfo(res.data);
       })
       .catch((err) => {
@@ -20,12 +19,9 @@ function AboutInfo() {
     <div className="about__container">
       <div className="about__information__left">
         {aboutInfo.map((about) => {
-          console.log(`about: ${JSON.stringify(about)}`);
-          console.log(`description: ${about.description}`);
           const paragraphs = about.description
             .split("\n")
             .filter((p) => p.trim() !== "");
-          console.log(`paragraphs: ${paragraphs}`);
 
           return (
             <div key={about._id} className="about_description">
